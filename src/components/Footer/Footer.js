@@ -13,9 +13,9 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <div className={classes.column}>
-        <div className={classes.title}>beefy.finance</div>
+        <div className={classes.title}>Doge Compounder</div>
         <a
-          href="https://docs.beefy.finance"
+          href="https://docs.dogecompounder.dog"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -25,27 +25,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://blog.beefy.finance/articles"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fas fa-file-alt ${classes.linkIcon}`} />
-          <span>{t('blog')}</span>
-        </a>
-
-        <a
-          href="https://forum.beefy.finance/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fas fa-comments ${classes.linkIcon}`} />
-          <span>{t('forum')}</span>
-        </a>
-
-        <a
-          href="https://github.com/beefyfinance"
+          href="https://github.com/dogecompounder"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -57,28 +37,9 @@ const Footer = () => {
 
       <div className={classes.column}>
         <div className={classes.title}>{t('products')}</div>
-        <a
-          href="https://gov.beefy.finance"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fas fa-landmark ${classes.linkIcon}`} />
-          <span>{t('gov')}</span>
-        </a>
 
         <a
-          href="https://vote.beefy.finance"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fas fa-vote-yea ${classes.linkIcon}`} />
-          <span>{t('vote')}</span>
-        </a>
-
-        <a
-          href="https://app.beefy.finance"
+          href="https://app.dogecompounder.dog"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -91,7 +52,7 @@ const Footer = () => {
       <div className={classes.column}>
         <div className={classes.title}>{t('socials')}</div>
         <a
-          href="https://twitter.com/beefyfinance"
+          href="https://twitter.com/dogecompounder"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -99,25 +60,6 @@ const Footer = () => {
           <i className={`fab fa-twitter ${classes.linkIcon}`} />
 
           <span>twitter</span>
-        </a>
-        <a
-          href="https://t.me/beefyfinance"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fab fa-telegram ${classes.linkIcon}`} />
-
-          <span>telegram</span>
-        </a>
-        <a
-          href="https://discord.gg/yq8wfHd"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes.link}
-        >
-          <i className={`fab fa-discord ${classes.linkIcon}`} />
-          <span>discord</span>
         </a>
       </div>
     </div>

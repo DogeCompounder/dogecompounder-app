@@ -61,7 +61,10 @@ function Root() {
         <meta name="description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:title" content={getPageMeta('App-Meta-Title')} />
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
-        <meta property="og:url" content={process.env.PUBLIC_URL || 'https://app.beefy.finance'} />
+        <meta
+          property="og:url"
+          content={process.env.PUBLIC_URL || 'https://app.dogecompounder.dog'}
+        />
       </Helmet>
       <HashRouter>{children}</HashRouter>
     </Provider>

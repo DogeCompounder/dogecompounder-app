@@ -1,4 +1,15 @@
 export const networkSettings = {
+  2000: {
+    chainId: `0x${parseInt(2000, 10).toString(16)}`,
+    chainName: 'DogeChain',
+    nativeCurrency: {
+      name: 'DOGE',
+      symbol: 'wDoge',
+      decimals: 18,
+    },
+    rpcUrls: ['https://rpc.dogechain.dog'],
+    blockExplorerUrls: ['https://explorer.dogechain.dog/'],
+  },
   56: {
     chainId: `0x${parseInt(56, 10).toString(16)}`,
     chainName: 'BSC Mainnet',

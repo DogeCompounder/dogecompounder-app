@@ -6,6 +6,10 @@ import WalletLink from 'walletlink';
 import { CloverConnector } from '@clover-network/clover-connector';
 import { allNetworks } from '../../network';
 import {
+  dogePools,
+  dogeStakePools,
+  //dogeAddressBook,
+  dogeZaps,
   avalanchePools,
   avalancheStakePools,
   avaxAddressBook,
@@ -72,6 +76,7 @@ import {
 export const appNetworkId = window.REACT_APP_NETWORK_ID;
 
 const networkTxUrls = {
+  2000: hash => `https://explorer.dogechain.dog/tx/${hash}`,
   56: hash => `https://bscscan.com/tx/${hash}`,
   128: hash => `https://hecoinfo.com/tx/${hash}`,
   43114: hash => `https://snowtrace.io/tx/${hash}`,
@@ -90,6 +95,7 @@ const networkTxUrls = {
 };
 
 const networkFriendlyName = {
+  2000: 'DogeChain',
   56: 'BSC',
   128: 'HECO',
   43114: 'AVAX',
@@ -108,6 +114,7 @@ const networkFriendlyName = {
 };
 
 const networkBuyUrls = {
+  2000: '',
   56: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
   128: 'https://ht.mdex.com/#/swap?inputCurrency=0xa71edc38d189767582c38a3145b5873052c3e47a&outputCurrency=0x765277eebeca2e31912c9946eae1021199b39c61',
   137: 'https://app.1inch.io/#/r/0xF4cb25a1FF50E319c267b3E51CBeC2699FB2A43B',
@@ -135,6 +142,8 @@ export const getNetworkCoin = () => {
 
 export const getNetworkPools = () => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return dogePools;
     case 56:
       return bscPools;
     case 128:
@@ -172,6 +181,8 @@ export const getNetworkPools = () => {
 
 export const getNetworkVaults = (networkId = appNetworkId) => {
   switch (networkId) {
+    case 2000:
+      return indexBy(dogePools, 'id');
     case 56:
       return indexBy(bscPools, 'id');
     case 128:
@@ -209,6 +220,8 @@ export const getNetworkVaults = (networkId = appNetworkId) => {
 
 export const getNetworkLaunchpools = (networkId = appNetworkId) => {
   switch (networkId) {
+    case 2000:
+      return indexBy(dogeStakePools, 'id');
     case 56:
       return indexBy(bscStakePools, 'id');
     case 128:
@@ -247,7 +260,23 @@ export const getNetworkLaunchpools = (networkId = appNetworkId) => {
 export const getNetworkTokens = () => {
   const chainId = window.REACT_APP_NETWORK_ID;
   switch (chainId) {
+    case 2000:
+      return [
+        {
+          WWDOGE: {
+            address: '0xb7ddc6414bf4f5515b52d8bdd69973ae205ff101',
+            chainId: 2000,
+            decimals: 18,
+            description: '',
+            logoURI: 'https://tokens.1inch.exchange/0x111111111117dc0aa78b770fa6a738034120c302.png',
+            name: 'Wrapped DogeCoin',
+            symbol: 'WWDOGE',
+            website: 'https://dogechain.dog/',
+          },
+        },
+      ];
     case 56:
+      console.log(bscAddressBook.tokens);
       return bscAddressBook.tokens;
     case 128:
       return hecoAddressBook.tokens;
@@ -286,6 +315,8 @@ export const getNetworkTokens = () => {
 
 export const getNetworkBurnTokens = () => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return {};
     case 56:
       return {
         [bscAddressBook.tokens.PERA.symbol]: bscAddressBook.tokens.PERA,
@@ -339,6 +370,8 @@ export const getNetworkBurnTokens = () => {
 
 export const getNetworkZaps = () => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return dogeZaps;
     case 56:
       return bscZaps;
     case 128:
@@ -376,6 +409,8 @@ export const getNetworkZaps = () => {
 
 export const getNetworkStables = () => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return ['BUSD', 'USDT', 'USDTs', 'USDC', 'USDCm', 'DAI', 'DAIm'];
     case 56:
       return [
         'BUSD',
@@ -494,6 +529,8 @@ export const getNetworkStables = () => {
 
 export const getNetworkMulticall = () => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return '0x0dbEA9dC2343A341d116D7c0205edB18F12b52f9';
     case 56:
       return '0xB94858b0bB5437498F5453A16039337e5Fdc269C';
     case 128:
@@ -531,6 +568,27 @@ export const getNetworkMulticall = () => {
 
 export const getNetworkConnectors = t => {
   switch (window.REACT_APP_NETWORK_ID) {
+    case 2000:
+      return {
+        network: 'dogechain',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'MetaMask',
+            },
+          },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc.dogechain.dog/',
+                2000: 'https://rpc.dogechain.dog/',
+              },
+            },
+          },
+        },
+      };
     case 56:
       return {
         network: 'binance',

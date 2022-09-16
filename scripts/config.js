@@ -13,8 +13,10 @@ import { fusePools } from '../src/features/configure/vault/fuse_pools.js';
 import { metisPools } from '../src/features/configure/vault/metis_pools.js';
 import { moonbeamPools } from '../src/features/configure/vault/moonbeam_pools.js';
 import { emeraldPools } from '../src/features/configure/vault/emerald_pools.js';
+import { dogePools } from '../src/features/configure/vault/doge_pools.js';
 
 export const chainPools = {
+  doge: dogePools,
   bsc: bscPools,
   // heco: hecoPools,
   avax: avalanchePools,
@@ -33,6 +35,7 @@ export const chainPools = {
 };
 
 export const chainRpcs = {
+  doge: process.env.DOGE_RPC || 'https://rpc.dogechain.dog',
   bsc: process.env.BSC_RPC || 'https://bsc-dataseed.binance.org/',
   // heco: process.env.HECO_RPC || 'https://http-mainnet.hecochain.com',
   avax: process.env.AVAX_RPC || 'https://api.avax.network/ext/bc/C/rpc',

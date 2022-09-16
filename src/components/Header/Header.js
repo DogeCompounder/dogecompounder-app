@@ -49,17 +49,17 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           <Button className={classes.title}>
             <Hidden xsDown>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Doge Compounder"
+                src={require(`images/doge.png`)}
                 height={'40px'}
                 className={classes.logo}
               />
-              beefy.finance
+              Doge Compounder
             </Hidden>
             <Hidden smUp>
               <img
-                alt="BIFI"
-                src={require(`images/BIFI-logo.svg`)}
+                alt="Doge Compounder"
+                src={require(`images/doge.png`)}
                 height={'35px'}
                 className={classes.logo}
               />
@@ -67,22 +67,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Button>
         </Link>
 
-        <div className={classes.middleNav}>
-          <Hidden smDown>
-            {renderLink('vote', t('vote'), 'vote-yea', classes)}
-            {renderLink('dashboard', t('stats'), 'chart-bar', classes)}
-            {renderLink('docs', t('docs'), 'book', classes)}
-            {renderLink('blog', t('blog'), 'file-alt', classes)}
-            <InsureLink t={t} classes={classes} />
-          </Hidden>
-          <Transak style={{ marginLeft: '5px', marginRight: '5px' }} className={classes.link}>
-            <i className={`fas fa-credit-card ${classes.icon}`} />
-            {t('buy')}
-          </Transak>
-          <Link className={classes.btnBoost} to={`/${chain}/stake`}>
-            <img alt="Boost" src={require('images/stake/boost.svg')} />
-          </Link>
-        </div>
+        <div className={classes.middleNav}></div>
 
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
@@ -118,16 +103,6 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </IconButton>
           <div className={classes.appResponsive}>{links}</div>
           <div style={{ textAlign: 'center' }}>
-            <LinkSidebar name="vote" label={t('vote')} icon="vote-yea" classes={classes} />
-            <LinkSidebar name="dashboard" label={t('stats')} icon="chart-bar" classes={classes} />
-            <LinkSidebar name="docs" label={t('docs')} icon="book" classes={classes} />
-            <LinkSidebar name="blog" label={t('blog')} icon="file-alt" classes={classes} />
-            <LinkSidebar name="forum" label={t('forum')} icon="comments" classes={classes} />
-            <InsureLinkSidebar key="insure" t={t} classes={classes} />
-            <Transak style={{ width: '100%', paddingTop: '10px' }} className={classes.link}>
-              <i className={`fas fa-credit-car ${classes.icon}`} />
-              {t('buy')}
-            </Transak>
             <IconButton onClick={setNightMode} className={classes.icon}>
               {isNightMode ? <WbSunny /> : <NightsStay />}
             </IconButton>
@@ -218,7 +193,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.beefy.finance`;
+  return name === 'buy' ? getNetworkBuyUrl() : `https://${name}.dogecompounder.dog`;
 };
 
 export default Header;

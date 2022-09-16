@@ -1,6 +1,7 @@
 import { addressBook } from 'blockchain-addressbook';
 
 const {
+  //doge: dogeAddressBook,
   polygon: polygonAddressBook,
   heco: hecoAddressBook,
   celo: celoAddressBook,
@@ -18,6 +19,7 @@ const {
   emerald: emeraldAddressBook,
 } = addressBook;
 export {
+  //dogeAddressBook,
   bscAddressBook,
   hecoAddressBook,
   celoAddressBook,
@@ -47,6 +49,7 @@ export {
   uniswapV2RouterABI,
   launchPoolABI,
 } from './abi';
+export { dogeStakePools } from './stake/doge_stake';
 export { bscStakePools } from './stake/bsc_stake';
 export { hecoStakePools } from './stake/heco_stake';
 export { avalancheStakePools } from './stake/avalanche_stake';
@@ -62,6 +65,7 @@ export { fuseStakePools } from './stake/fuse_stake';
 export { metisStakePools } from './stake/metis_stake';
 export { moonbeamStakePools } from './stake/moonbeam_stake';
 export { emeraldStakePools } from './stake/emerald_stake';
+export { dogePools } from './vault/doge_pools';
 export { bscPools } from './vault/bsc_pools';
 export { hecoPools } from './vault/heco_pools';
 export { avalanchePools } from './vault/avalanche_pools';
@@ -77,6 +81,7 @@ export { fusePools } from './vault/fuse_pools';
 export { metisPools } from './vault/metis_pools';
 export { moonbeamPools } from './vault/moonbeam_pools';
 export { emeraldPools } from './vault/emerald_pools';
+export { dogeZaps } from './zap/doge_zaps';
 export { bscZaps } from './zap/bsc_zaps';
 export { hecoZaps } from './zap/heco_zaps';
 export { avalancheZaps } from './zap/avalanche_zaps';

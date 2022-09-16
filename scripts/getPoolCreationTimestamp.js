@@ -3,6 +3,7 @@ import Web3 from 'web3';
 import { chainPools, chainRpcs } from './config.js';
 
 const explorerApiUrls = {
+  doge: 'https://explorer.dogechain.dog/',
   cronos: 'https://api.cronoscan.com/api',
   bsc: 'https://api.bscscan.com/api',
   polygon: 'https://api.polygonscan.com/api',

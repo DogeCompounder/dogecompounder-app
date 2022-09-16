@@ -1,11 +1,17 @@
 /* eslint-disable import/first */
 export const allNetworks = [
   {
+    name: 'Doge Chain',
+    asset: 'DOGECOIN',
+    id: 2000,
+    hash: '/doge',
+  },
+  {
     name: 'BSC',
     asset: 'BSC',
     id: 56,
     hash: '/bsc',
-  },
+  } /*
   {
     name: 'HECO',
     asset: 'HECO',
@@ -89,7 +95,7 @@ export const allNetworks = [
     asset: 'EMERALD',
     id: 42262,
     hash: '/oasis',
-  },
+  },*/,
 ];
 
 const network = allNetworks.find(n => window.location.hash.startsWith('#' + n.hash));

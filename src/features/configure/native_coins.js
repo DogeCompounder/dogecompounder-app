@@ -1,5 +1,13 @@
 export const nativeCoins = [
   {
+    chainId: 2000,
+    name: 'Doge',
+    symbol: 'WDOGE',
+    decimals: 18,
+    wrappedSymbol: 'WWDOGE',
+    allowance: Infinity,
+  },
+  {
     chainId: 1,
     name: 'Ethereum',
     symbol: 'ETH',

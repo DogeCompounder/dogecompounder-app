@@ -14,6 +14,13 @@ const styles = theme => ({
     fontWeight: 900,
     color: theme.palette.text.primary,
   },
+  disclaimer2: {
+    padding: '12px',
+    borderRadius: '0',
+    marginBottom: '2rem',
+    fontWeight: 900,
+    color: theme.palette.text.primary,
+  },
 });
 
 export default styles;

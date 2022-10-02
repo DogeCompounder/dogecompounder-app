@@ -14,21 +14,12 @@ const Disclaimer = () => {
 
   return (
     <Grid container item className={classes.root} justifyContent="center">
-      <Typography className={classes.disclaimer}>
-        <img
-          alt="Airdrop"
-          src={require(`./airdrop.png`)}
-          height={'30px'}
-          className={classes.logo}
-        />
-        Airdrop is coming
-        <img
-          alt="Airdrop"
-          src={require(`./airdrop.png`)}
-          height={'30px'}
-          className={classes.logo}
-        />
-      </Typography>
+      <img
+        alt="Airdrop"
+        src={require(`./airdrop.png`)}
+        height={'100px'}
+        //className={classes.logo}
+      />
     </Grid>
   );
 };
